@@ -1,81 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- <title>Мій сайт</title>
- <link rel="stylesheet" href="styles.css">
+  <title>Мій сайт</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
- <header>
-  <nav>
-   <ul>
-    <li><a href="#count">Підрахунок значень</a></li>
-    <li><a href="#reverse">Число в зворотньому порядку</a></li>
-    <li><a href="#convert">Кілометри в міліметри</a></li>
-   </ul>
-  </nav>
- </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#count">Підрахунок значень</a></li>
+        <li><a href="#reverse">Число в зворотньому порядку</a></li>
+        <li><a href="#convert">Кілометри в міліметри</a></li>
+      </ul>
+    </nav>
+  </header>
 
- <main>
-  <section id="count">
-   <h2>Підрахунок значень</h2>
-   <form>
-    <label for="input-values">Введіть значення, розділені комами:</label><br>
-    <input type="text" id="input-values" name="input-values"><br>
-    <input type="button" value="Підрахувати" onclick="countValues()">
-   </form>
-   <p id="count-result"></p>
-  </section>
+  <main>
+    <section id="count">
+      <h2>Підрахунок значень</h2>
+      <form>
+        <label for="input-values">Введіть значення, розділені комами:</label><br>
+        <input type="text" id="input-values" name="input-values"><br>
+        <input type="button" value="Підрахувати" onclick="countValues()">
+      </form>
+      <p id="count-result"></p>
+    </section>
 
-  <section id="reverse">
-   <h2>Число у зворотньому порядку</h2>
-   <form>
-    <label for="input-number">Введіть число:</label><br>
-    <input type="text" id="input-number" name="input-number"><br>
-    <input type="button" value="Перевернути" onclick="reverseNumber()">
-   </form>
-   <p id="reverse-result"></p>
-  </section>
+    <section id="reverse">
+      <h2>Число у зворотньому порядку</h2>
+      <form>
+        <label for="input-number">Введіть число:</label><br>
+        <input type="text" id="input-number" name="input-number"><br>
+        <input type="button" value="Перевернути" onclick="reverseNumber()">
+      </form>
+      <p id="reverse-result"></p>
+    </section>
 
-  <section id="convert">
-   <h2>Кілометри в міліметри</h2>
-   <form>
-    <label for="input-km">Введіть кілометри:</label><br>
-    <input type="text" id="input-km" name="input-km"><br>
-    <input type="button" value="Перевести" onclick="convertKmToMm()">
-   </form>
-   <p id="convert-result"></p>
-  </section>
- </main>
+    <section id="convert">
+      <h2>Кілометри в міліметри</h2>
+      <form>
+        <label for="input-km">Введіть кілометри:</label><br>
+        <input type="text" id="input-km" name="input-km"><br>
+        <input type="button" value="Перевести" onclick="convertKmToMm()">
+      </form>
+      <p id="convert-result"></p>
+    </section>
+  </main>
 
- <script>
-  function countValues() {
-   let inputValues = document.getElementById("input-values").value;
-   let valuesArray = inputValues.split(",");
-   let counts = {};
-   for (let i = 0; i < valuesArray.length; i++) {
-    let value = valuesArray[i].trim();
-    if (counts[value]) {
-     counts[value]++;
-    } else {
-     counts[value] = 1;
-    }
-   }
-   let result = "";
-   for (let value in counts) {
-    result += value + ": " + counts[value] + "<br>";
-   }
-   document.getElementById("count-result").innerHTML = result;
-  }
+  <script src="srcipt.js"></script>
+</body>
 
-  function reverseNumber() {
-   let inputNumber = document.getElementById("input-number").value;
-   let reversedNumber = "";
-   for (let i = inputNumber.length - 1; i >= 0; i--) {
-    reversedNumber += inputNumber.charAt(i);
-   }
-   document.getElementById("reverse-result").innerHTML = reversedNumber;
-  }
-
-  function convertKmToMm(km) {
-  return km * 1000000;
-}	
+</html>
